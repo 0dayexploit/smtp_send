@@ -7,7 +7,7 @@ from os.path import isabs
 logger = logging.getLogger(__name__)
 
 DEFAULT_CONFIG = {
-    'LOGIN' : 'user@mail.ru,
+    'LOGIN' : 'user@mail.ru',
 }
 
 def read_settings(path=None):
