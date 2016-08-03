@@ -48,5 +48,5 @@ smtp_send login@gmail.com password -s smtp.gmail.com
 If you want to set Subject and Message fields use -S and -M parameters:
 
 ```sh
-smtp_send login@mail.ru password -S Test -M \"Hello world\"
+smtp_send login@mail.ru password -S Test -M "Hello world"
 ```
