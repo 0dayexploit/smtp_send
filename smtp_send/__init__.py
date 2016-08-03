@@ -45,9 +45,17 @@ def parse_arguments():
                         default = "smtp.mail.ru",
                         help = 'smtp server')
 
-    parser.add_argument('-a', dest = 'attachment',  
+    parser.add_argument('-A', dest = 'attachment',  
                         default = None,
                         help = 'could be directory or file')
+
+    parser.add_argument('-M', dest = 'message', type = str,  
+                        default = "",
+                        help = 'Message text')
+
+    parser.add_argument('-S', dest = 'subject', type = str,  
+                        default = "",
+                        help = 'Subject text')
 
     return parser.parse_args()
 
@@ -72,7 +80,7 @@ def main():
 
         with SendMail(args.server, args.port, 
                       args.login, args.password, args.login, 
-                      "Subject", "Hello world", 
+                      args.subject, args.message, 
                       args.attachment) as sm:
         	pass
 

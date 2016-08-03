@@ -44,3 +44,9 @@ To change server/port use -s/-p parameters:
 ```sh
 smtp_send login@gmail.com password -s smtp.gmail.com
 ```
+
+If you want to set Subject and Message fields use -S and -M parameters:
+
+```sh
+smtp_send login@mail.ru password -S Test -M \"Hello world\"
+```
