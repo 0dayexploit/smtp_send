@@ -26,10 +26,17 @@ python setup.py install
 
 ## Usage
 
-smtp_send use smtp.mail.ru default server and port = 587
+smtp_send uses smtp.mail.ru server by default and port 587.
+Also smtp_send sends message to yourself by default.
 
 ```sh
 smtp_send login@mail.ru password
+```
+
+To set recipient use -R option:
+
+```sh
+smtp_send login@mail.ru password -R user@yandex.ru
 ```
 
 If you want to attach file or directory (without subdirectories)

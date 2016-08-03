@@ -57,6 +57,10 @@ def parse_arguments():
                         default = "",
                         help = 'Subject text')
 
+    parser.add_argument('-R', dest = 'recipient', type = str, 
+    					default = None, 
+                    	help = 'Mail recipient login')
+
     return parser.parse_args()
 
 def main():
@@ -78,10 +82,14 @@ def main():
             config_file = args.config
             settings = read_settings(config_file)  
 
+        recipient = args.recipient
+        if args.recipient is None:
+        	recipient = args.login
+
         with SendMail(args.server, args.port, 
-                      args.login, args.password, args.login, 
+                      args.login, args.password, recipient, 
                       args.subject, args.message, 
-                      args.attachment) as sm:
+                      args.attachment):
         	pass
 
     except Exception as e:
